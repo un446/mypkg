@@ -1,5 +1,5 @@
 from setuptools import find_packages, setup
-mport os
+import os
 from glob import glob
 package_name = 'mypkg'
 
