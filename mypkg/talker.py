@@ -11,11 +11,11 @@ class Talker(Node):
         self.n = 0
 
 
-def cb(self):
-    msg = Int16()
-    msg.data = self.n
-    self.pub.publish(msg)
-    self.n += 1
+    def cb(self):
+        msg = Int16()
+        msg.data = self.n
+        self.pub.publish(msg)
+        self.n += 1
 
 def main():
     rclpy.init()
