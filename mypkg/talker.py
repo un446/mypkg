@@ -22,5 +22,4 @@ def main():
     node = Talker()
     rclpy.spin(node)
 
-node.create_timer(0.5, cb)
-rclpy.spin(node)
+
