@@ -1,25 +1,33 @@
+#!/usr/bin/python3
+# SPDX-FileCopyrightText: 2024 Yuna Isomura
+# SPDX-License-Identifier: BSD-3-Clause
+
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Int16
+from std_msgs.msg import String
+import subprocess
+import re
 
-
-class Talker(Node):
+class Temperature(Node):
     def __init__(self):
-        super().__init__("talker")
-        self.pub = self.create_publisher(Int16, "countup", 10)
-        self.create_timer(0.5, self.cb)
-        self.n = 0
+        super().__init__('temperature')
+        self.publisher = self.create_publisher(String, '/temperature', 10)
+        self.timer = self.create_timer(1.0, self.publish_temperature)
+        
+    def main():
+        result = subprocess.run(['sensors'], stdout=subprocess.PIPE)
+        output = result.stdout.decode('utf-8')
 
+        match = re.search(r'Core 0:\s+\+(\d+)\.\d+℃ ', output)
+        if match:
+            return f"{match.group(1)}℃ "
+        else:
+            return "温度を読み込めません"
 
-    def cb(self):
-        msg = Int16()
-        msg.data = self.n
-        self.pub.publish(msg)
-        self.n += 1
+    def publish_temperature(self):
+        temperature = self.get_temperature()
 
-def main():
-    rclpy.init()
-    node = Talker()
-    rclpy.spin(node)
-
-
+        if temperature != "温度を読み込めません":
+            msg = String()
+            msg.data = temperature
+            self.pub
