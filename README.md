@@ -27,10 +27,12 @@ $ ros2 run mypkg memory
 
 ## 開発環境
 * Ubuntu 20.04 LTS
-* python 3
+* Python 3
+* ROS 2 Humble Hawksbil
 
 ## テスト環境
 * Ubuntu 20.04 LTS
+* ROS 2 Humble Hawksbil
 
 ## 著作権･ライセンス
 * このソフトウェアパッケージは、3条項BSDライセンスの下、再頒布および使用が許可されます。
