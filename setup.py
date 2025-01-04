@@ -1,7 +1,8 @@
 import os
 from glob import glob
 from setuptools import find_packages, setup
-
+import os
+from glob import glob
 package_name = 'mypkg'
 
 setup(
@@ -24,7 +25,7 @@ setup(
     entry_points={
         'console_scripts': [
             'talker = mypkg.talker:main',
-            'listener = mypkg.listener:main',
+            'memory = mypkg.memory:main',
         ],
     },
 )

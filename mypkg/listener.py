@@ -2,7 +2,12 @@ import rclpy
 from rclpy.node import Node
 from person_msgs.srv import Query
 
+class Listener(Node):
+    def __init__(self):
+        super().__init__("listener")
+        self.create_subscription(Int16, "countup", self.cb, 10)
 
+<<<<<<< HEAD
 rclpy.init()
 node = Node("listener")
 
@@ -34,3 +39,13 @@ def main():
 
 if __name__ == '__main__':
     main()
+=======
+    def cb(self, msg):
+        self.get_logger().info("Listen: %d" % msg.data)
+
+def main():
+    rclpy.init()
+    node = Listener()
+    rclpy.spin(node)
+
+>>>>>>> lesson10
