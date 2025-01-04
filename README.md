@@ -1,4 +1,5 @@
 # robosys2024 課題２
+[![test](https://github.com/un446/mypkg/actions/workflows/test.yml/badge.svg)](https://github.com/un446/mypkg/actions/workflows/test.yml)
 
 ## このパッケージについて
 * このパッケージは2024年ロボットシステム学の課題２で作成したパッケージです。
