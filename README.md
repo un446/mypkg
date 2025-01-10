@@ -26,12 +26,12 @@ $ ros2 run mypkg memory
 ```
 
 ## 開発環境
-* Ubuntu 20.04 LTS
+* Ubuntu 22.04 LTS
 * Python 3
 * ROS 2 Humble Hawksbil
 
 ## テスト環境
-* Ubuntu 20.04 LTS
+* Ubuntu 22.04 LTS
 * ROS 2 Humble Hawksbil
 
 ## 著作権･ライセンス
